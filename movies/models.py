@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+ 
 # Create your models here.
 from django.db import models
 class Movie(models.Model):
@@ -11,7 +11,7 @@ class Movie(models.Model):
     image = models.ImageField(upload_to='movie_images/')
     def __str__(self):
         return str(self.id) + ' - ' + self.name
-
+ 
 class Review(models.Model):
     id = models.AutoField(primary_key=True)
     comment = models.CharField(max_length=255)
@@ -22,3 +22,26 @@ class Review(models.Model):
         on_delete=models.CASCADE)
     def __str__(self):
         return str(self.id) + ' - ' + self.movie.name
+ 
+class Rating(models.Model):
+    id = models.AutoField(primary_key=True)
+    message = models.CharField(max_length=255)
+    rating = models.IntegerField(default=0)
+    movie = models.ForeignKey(Movie,
+        on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+        on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.id) + ' - ' + self.movie.name
+
+class Rating(models.Model):
+    id = models.AutoField(primary_key=True)
+    message = models.CharField(max_length=255)
+    rating = models.IntegerField(default=0)
+    movie = models.ForeignKey(Movie,
+        on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+        on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.id) + ' - ' + self.movie.name
+    

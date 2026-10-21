@@ -42,3 +42,12 @@
   width: fit-content;
   max-height: 400px;
 }
+    #ratingStars {
+            font-size: 30px;
+        }
+        .star {
+            cursor: pointer;
+        }
+        .selected {
+            color: gold;
+        }
