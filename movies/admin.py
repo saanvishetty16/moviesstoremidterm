@@ -7,7 +7,6 @@ from django.db.models.functions import Coalesce
 
 # Register your models here.
 from .models import Movie, Review, TopPurchasingUsers
-from cart.models import Item, Order
 
 
 class MovieAdmin(admin.ModelAdmin):
