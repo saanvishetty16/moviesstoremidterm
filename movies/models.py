@@ -44,4 +44,12 @@ class Rating(models.Model):
         on_delete=models.CASCADE)
     def __str__(self):
         return str(self.id) + ' - ' + self.movie.name
+
+class MostCommenter(User):
+   class Meta:
+       proxy = True
+       verbose_name = "Most Commented User"
+       verbose_name_plural = "Most Commented User"
+
+
     
