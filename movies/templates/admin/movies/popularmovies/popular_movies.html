@@ -1,0 +1,52 @@
+{% extends 'admin/base_site.html' %}
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">Home</a>&rsaquo; "Popular Movies"
+    </div>
+{% endblock %}
+{% block content %}
+    <div id="content-main">
+        <table>
+            <caption>Most Purchased</caption>
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Times Bought</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in most_purchased %}
+                <tr>
+                    <td>
+                        {{ movie.name }}
+                    </td>
+                    <td>
+                        {{ movie.total }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table>
+            <caption>Most Reviewed</caption>
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Times Reviewed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in most_reviewed %}
+                <tr>
+                    <td>
+                        {{ movie.name }}
+                    </td>
+                    <td>
+                        {{ movie.total }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
