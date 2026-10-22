@@ -51,7 +51,11 @@ class MostCommenter(User):
        verbose_name = "Most Commented User"
        verbose_name_plural = "Most Commented User"
 
-
+class TopPurchasingUsers(User):
+    class Meta:
+        proxy = True
+        verbose_name = "Top Purchasing User"
+        verbose_name_plural = "Top Purchasing Users"
     
 class PopularMovie(Movie):
     class Meta:
