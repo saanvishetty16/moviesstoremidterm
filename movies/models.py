@@ -53,3 +53,8 @@ class MostCommenter(User):
 
 
     
+class PopularMovie(Movie):
+    class Meta:
+        proxy = True
+        verbose_name = "Popular Movie:"
+        verbose_name_plural = "Popular Movie:"
